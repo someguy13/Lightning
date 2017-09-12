@@ -1,6 +1,6 @@
 int startX,startY,endX,endY,startX2,startY2,endX2,endY2;
-String right = "on";
-String left = "on";
+Boolean right = true;
+Boolean left = true;
 
 
 void setup()
@@ -26,7 +26,7 @@ void draw(){
 	ellipse(300,300,20,20);
 
 	strokeWeight(5);
-	if(left == "on"){
+	if(left == true){
 		while(endX < 200){
 			stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
 			endX = startX + (int)(Math.random() * 10);
@@ -37,7 +37,7 @@ void draw(){
 		}
 	}
 
-	if(right == "on") {
+	if(right == true) {
 		while(endX2 > 200){
 			stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
 			endX2 = startX2 - (int)(Math.random() * 10);
@@ -55,25 +55,22 @@ void draw(){
 			ellipse(200,200,size,size);
 		}
 	}
-
-	System.out.println(right);
-
 	
 }
 void mousePressed()
 {
-	if(mouseX < 310 && mouseX > 290 && mouseY < 310 && mouseY > 290 && right == "on"){
-		right = "off";
+	if(mouseX < 310 && mouseX > 290 && mouseY < 310 && mouseY > 290 && right == true){
+		right = false;
 	}
-	else if(mouseX < 310 && mouseX > 290 && mouseY < 310 && mouseY > 290 && right == "off"){
-		right = "on";
+	else if(mouseX < 310 && mouseX > 290 && mouseY < 310 && mouseY > 290 && right == false){
+		right = true;
 	
 	}
-	else if(mouseX < 110 && mouseX > 90 && mouseY < 310 && mouseY > 290 && left == "on"){
-		left = "off";
+	else if(mouseX < 110 && mouseX > 90 && mouseY < 310 && mouseY > 290 && left == true){
+		left = false;
 	}
-	else if(mouseX < 110 && mouseX > 90 && mouseY < 310 && mouseY > 290 && left == "off"){
-		left = "on";
+	else if(mouseX < 110 && mouseX > 90 && mouseY < 310 && mouseY > 290 && left == false){
+		left = true;
 	}
 
 }
