@@ -7,7 +7,6 @@ void setup()
 {
   size(400,400);
   frameRate(10);
-  //noLoop();
 }
 void draw(){
 
@@ -36,7 +35,7 @@ void draw(){
 			startX = endX;
 			startY = endY;
 		}
-		
+
 		if(right == "on") {
 			stroke((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
 			endX2 = startX2 - (int)(Math.random() * 10);
